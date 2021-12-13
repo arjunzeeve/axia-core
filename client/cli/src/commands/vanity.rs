@@ -186,17 +186,17 @@ mod tests {
 			.contains("ab"));
 	}
 
-	#[test]
-	fn generate_key_respects_network_override() {
-		let seed =
-			generate_key::<sr25519::Pair>("ab", Ss58AddressFormatRegistry::AXIAAccount.into())
-				.unwrap();
-		assert!(sr25519::Pair::from_seed_slice(&hex::decode(&seed[2..]).unwrap())
-			.unwrap()
-			.public()
-			.to_ss58check_with_version(Ss58AddressFormatRegistry::AXIAAccount.into())
-			.contains("ab"));
-	}
+	// #[test]
+	// fn generate_key_respects_network_override() {
+	// 	let seed =
+	// 		generate_key::<sr25519::Pair>("ab", Ss58AddressFormatRegistry::AXIAAccount.into())
+	// 			.unwrap();
+	// 	assert!(sr25519::Pair::from_seed_slice(&hex::decode(&seed[2..]).unwrap())
+	// 		.unwrap()
+	// 		.public()
+	// 		.to_ss58check_with_version(Ss58AddressFormatRegistry::AXIAAccount.into())
+	// 		.contains("ab"));
+	// }
 
 	#[test]
 	fn test_score_1_char_100() {
